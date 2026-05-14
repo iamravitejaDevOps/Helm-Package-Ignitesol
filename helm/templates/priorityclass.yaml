@@ -1,0 +1,11 @@
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+
+metadata:
+  name: high-priority-app
+
+value: 100000
+
+globalDefault: false
+
+description: "Higher priority than daemonset pods"

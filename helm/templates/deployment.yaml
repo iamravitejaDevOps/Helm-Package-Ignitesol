@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ignite-sol
+spec:
+  replicas: {{ .Values.replicaCount }}
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 5
+      maxSurge: 2
+
+  selector:
+    matchLabels:
+      app: ignite-sol
+
+  template:
+    metadata:
+      labels:
+        app: ignite-sol
+
+    spec:
+      priorityClassName: {{ .Values.priorityClassName }}
+
+      containers:
+        - name: ignite-sol
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+
+          ports:
+            - containerPort: {{ .Values.service.port }}
+
+          resources:
+            requests:
+              cpu: {{ .Values.resources.requests.cpu }}
+              memory: {{ .Values.resources.requests.memory }}
+            limits:
+              cpu: {{ .Values.resources.limits.cpu }}
+              memory: {{ .Values.resources.limits.memory }}
+
+    

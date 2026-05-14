@@ -1,0 +1,19 @@
+aws ecr get-login-password \
+--region us-east-1 | docker login \
+--username AWS \
+--password-stdin 061039803094.dkr.ecr.us-east-1.amazonaws.com
+
+
+
+docker build -t sample-test .
+
+docker tag iamsrt23/ignitesol-nikeapp  \
+061039803094.dkr.ecr.us-east-1.amazonaws.com/ignite-sol:latest
+
+docker push \
+061039803094.dkr.ecr.us-east-1.amazonaws.com/ignite-sol:latest
+
+
+aws eks update-kubeconfig \
+--region us-east-1 \
+--name ignite_sol_cluster
