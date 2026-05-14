@@ -76,4 +76,8 @@ cd helm/
 
 helm install ignite-sol . --namespace default
 
+
+#to access the application
+http://<elb>:8080
+
 ```
