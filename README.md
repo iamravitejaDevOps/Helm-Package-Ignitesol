@@ -6,7 +6,7 @@ I have deployed a Nike-app Front end based Application
 - i have implemented Pod Disruption Budget available at least 5 pods
 - Implemented a Priority class for pods
 - Added a ECR read policy and attach to EKS cluster  easily pull docker image to cluster
-- I have write Multistage Docker file
+- I have write Multistage Docker file Deployed through Nginx
 - Bash script init.sh
     - to get a s3 bucket and dynamodb statelock
     
