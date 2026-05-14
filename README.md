@@ -50,13 +50,13 @@ Build The Docker image
 docker build -t sample-test .
 
 docker tag sample-test  \
-061039803094.dkr.ecr.us-east-1.amazonaws.com/ignite-sol:latest
+<accountid>.dkr.ecr.us-east-1.amazonaws.com/ignite-sol:latest
 
 docker push \
-061039803094.dkr.ecr.us-east-1.amazonaws.com/ignite-sol:latest
+<accountid>.dkr.ecr.us-east-1.amazonaws.com/ignite-sol:latest
 
 # i am using mac i have issue architecture mine ARM so i use this comamand
-docker buildx build --platform linux/amd64 -t 061039803094.dkr.ecr.us-east-1.amazonaws.com/ignite-sol:latest --push .
+docker buildx build --platform linux/amd64 -t <accountid>.dkr.ecr.us-east-1.amazonaws.com/ignite-sol:latest --push .
 ```
 
 Connect with kubernetes Cluster
