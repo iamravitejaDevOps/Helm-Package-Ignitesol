@@ -76,6 +76,9 @@ cd helm/
 
 helm install ignite-sol . --namespace default
 
+kubectl get pods
+kubectl get svc
+
 
 #to access the application
 http://<elb>:8080
